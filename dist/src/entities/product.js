@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Product = void 0;
 const typeorm_1 = require("typeorm");
 const category_1 = require("./category");
+const cartDetail_1 = require("./cartDetail");
 let Product = class Product {
 };
 __decorate([
@@ -34,6 +35,10 @@ __decorate([
     (0, typeorm_1.ManyToOne)(() => category_1.Category, (category) => category.products),
     __metadata("design:type", category_1.Category)
 ], Product.prototype, "category", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => cartDetail_1.CartDetail, (cartDetail) => cartDetail.product),
+    __metadata("design:type", Array)
+], Product.prototype, "cartDetails", void 0);
 Product = __decorate([
     (0, typeorm_1.Entity)()
 ], Product);

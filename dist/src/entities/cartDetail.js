@@ -9,29 +9,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.User = void 0;
+exports.CartDetail = void 0;
 const typeorm_1 = require("typeorm");
 const cart_1 = require("./cart");
-let User = class User {
+const product_1 = require("./product");
+let CartDetail = class CartDetail {
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], User.prototype, "id", void 0);
+], CartDetail.prototype, "id", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ type: 'varchar' }),
+    __metadata("design:type", String)
+], CartDetail.prototype, "name", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], User.prototype, "username", void 0);
+    __metadata("design:type", Number)
+], CartDetail.prototype, "price", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], User.prototype, "password", void 0);
+    __metadata("design:type", Number)
+], CartDetail.prototype, "quantity", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => cart_1.Cart, (cart) => cart.user),
-    __metadata("design:type", Array)
-], User.prototype, "carts", void 0);
-User = __decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", Number)
+], CartDetail.prototype, "total", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => cart_1.Cart, (cart) => cart.cartDetails),
+    __metadata("design:type", cart_1.Cart)
+], CartDetail.prototype, "cart", void 0);
+__decorate([
+    (0, typeorm_1.ManyToOne)(() => product_1.Product, (product) => product.cartDetails),
+    __metadata("design:type", product_1.Product)
+], CartDetail.prototype, "product", void 0);
+CartDetail = __decorate([
     (0, typeorm_1.Entity)()
-], User);
-exports.User = User;
-//# sourceMappingURL=user.js.map
+], CartDetail);
+exports.CartDetail = CartDetail;
+//# sourceMappingURL=cartDetail.js.map
