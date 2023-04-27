@@ -27,6 +27,11 @@ class ProductController {
             await productService_2.default.removeProduct(id);
             res.status(200).json('ok');
         };
+        this.findById = async (req, res) => {
+            const id = req.params.id;
+            const product = await productService_2.default.findById(id);
+            res.status(200).json(product);
+        };
     }
 }
 exports.default = new ProductController();

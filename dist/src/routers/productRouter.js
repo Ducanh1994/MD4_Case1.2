@@ -10,5 +10,6 @@ router.get('/', productController_1.default.showProduct);
 router.post('/', productController_1.default.addProduct);
 router.put('/:id', productController_1.default.editProduct);
 router.delete('/:id', productController_1.default.removeProduct);
+router.get('/:id', productController_1.default.findById);
 exports.default = router;
 //# sourceMappingURL=productRouter.js.map

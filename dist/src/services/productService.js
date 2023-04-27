@@ -24,6 +24,14 @@ class ProductService {
         this.removeProduct = async (id) => {
             await this.productRepository.delete({ id });
         };
+        this.findById = async (id) => {
+            return await this.productRepository.findOne({
+                where: { id: id },
+                relations: {
+                    category: true,
+                }
+            });
+        };
         this.productRepository = data_source_1.AppDataSource.getRepository(product_1.Product);
     }
 }

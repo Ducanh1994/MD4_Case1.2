@@ -26,5 +26,10 @@ class ProductController {
         await productService.removeProduct(id)
         res.status(200).json('ok')
     }
+    findById = async (req:Request,res:Response) => {
+        const id = req.params.id;
+        const product = await productService.findById(id)
+        res.status(200).json(product)
+    }
 }
 export default new ProductController()

@@ -29,6 +29,15 @@ class ProductService {
     removeProduct = async (id) => {
         await this.productRepository.delete({id});
     }
+    findById = async (id) => {
+        return await this.productRepository.findOne({
+            where: {id: id},
+            relations: {
+                category: true,
+            }
+        })
+    }
+
 }
 
 export default new ProductService();
