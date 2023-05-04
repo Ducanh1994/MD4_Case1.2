@@ -1,6 +1,7 @@
 import {Product} from "../entities/product";
 import {AppDataSource} from "../data-source";
 
+
 class ProductService {
     private productRepository;
 
@@ -37,7 +38,6 @@ class ProductService {
             }
         })
     }
-
 }
 
 export default new ProductService();

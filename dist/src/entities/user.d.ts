@@ -1,7 +1,9 @@
-import { Cart } from "./cart";
+import { Order } from "./order";
+import { Role } from "./role";
 export declare class User {
     id: number;
     username: string;
     password: string;
-    carts: Cart[];
+    orders: Order[];
+    role: Role;
 }

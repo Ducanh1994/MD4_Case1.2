@@ -1,11 +1,14 @@
 import Router from "express";
 import productController from "../controllers/productController";
+import {auth} from "../middleware/auth";
 
 
-const router = Router();
-router.get('/',productController.showProduct);
-router.post('/',productController.addProduct);
-router.put('/:id',productController.editProduct);
-router.delete('/:id',productController.removeProduct);
-router.get('/:id',productController.findById);
-export default router;
+const productRouter = Router();
+
+productRouter.use(auth);
+productRouter.get('/',productController.showProduct);
+productRouter.post('/',productController.addProduct);
+productRouter.put('/:id',productController.editProduct);
+productRouter.delete('/:id',productController.removeProduct);
+productRouter.get('/:id',productController.findById);
+export default productRouter;
