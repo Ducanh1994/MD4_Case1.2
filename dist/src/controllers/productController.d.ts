@@ -6,6 +6,7 @@ declare class ProductController {
     editProduct: (req: Request, res: Response) => Promise<void>;
     removeProduct: (req: Request, res: Response) => Promise<void>;
     findById: (req: Request, res: Response) => Promise<void>;
+    findByPrice: (req: Request, res: Response) => Promise<void>;
 }
 declare const _default: ProductController;
 export default _default;

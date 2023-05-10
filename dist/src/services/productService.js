@@ -32,6 +32,14 @@ class ProductService {
                 }
             });
         };
+        this.findByPrice = async (price) => {
+            return await this.productRepository.findOne({
+                where: { price: price },
+                relations: {
+                    category: true,
+                }
+            });
+        };
         this.productRepository = data_source_1.AppDataSource.getRepository(product_1.Product);
     }
 }

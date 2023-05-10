@@ -17,9 +17,7 @@ class ProductController {
         };
         this.editProduct = async (req, res) => {
             const id = req.params.id;
-            console.log(id);
             const product = req.body;
-            console.log(product);
             await productService_1.default.editProduct(id, product);
             res.status(200).json('ok');
         };
@@ -31,6 +29,11 @@ class ProductController {
         this.findById = async (req, res) => {
             const id = req.params.id;
             const product = await productService_1.default.findById(id);
+            res.status(200).json(product);
+        };
+        this.findByPrice = async (req, res) => {
+            const price = req.query.price;
+            const product = await productService_1.default.findByPrice(price);
             res.status(200).json(product);
         };
     }

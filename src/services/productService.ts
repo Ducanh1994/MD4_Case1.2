@@ -38,6 +38,14 @@ class ProductService {
             }
         })
     }
+    findByPrice = async (price) => {
+        return await this.productRepository.findOne({
+            where: {price: price},
+            relations: {
+                category: true,
+            }
+        })
+    }
 }
 
 export default new ProductService();

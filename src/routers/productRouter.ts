@@ -11,4 +11,5 @@ productRouter.post('/',productController.addProduct);
 productRouter.put('/:id',productController.editProduct);
 productRouter.delete('/:id',productController.removeProduct);
 productRouter.get('/:id',productController.findById);
+productRouter.get('/search/price ',productController.findByPrice);
 export default productRouter;
