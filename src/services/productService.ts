@@ -46,6 +46,11 @@ class ProductService {
             }
         })
     }
+
+    arrangeByPrice = async () => {
+        return await this.productRepository.createQueryBuilder("product")
+            .orderBy("product.price","ASC").getMany();
+    }
 }
 
 export default new ProductService();

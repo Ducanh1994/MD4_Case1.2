@@ -40,6 +40,10 @@ class ProductService {
                 }
             });
         };
+        this.arrangeByPrice = async () => {
+            return await this.productRepository.createQueryBuilder("product")
+                .orderBy("product.price", "ASC").getMany();
+        };
         this.productRepository = data_source_1.AppDataSource.getRepository(product_1.Product);
     }
 }

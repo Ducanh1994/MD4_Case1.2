@@ -10,7 +10,8 @@ productRouter.get('/', productController_1.default.showProduct);
 productRouter.post('/', productController_1.default.addProduct);
 productRouter.put('/:id', productController_1.default.editProduct);
 productRouter.delete('/:id', productController_1.default.removeProduct);
+productRouter.get('/search/price', productController_1.default.findByPrice);
+productRouter.get('/arrange', productController_1.default.arrangeByPrice);
 productRouter.get('/:id', productController_1.default.findById);
-productRouter.get('/search/price ', productController_1.default.findByPrice);
 exports.default = productRouter;
 //# sourceMappingURL=productRouter.js.map

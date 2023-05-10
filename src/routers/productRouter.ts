@@ -10,6 +10,10 @@ productRouter.get('/',productController.showProduct);
 productRouter.post('/',productController.addProduct);
 productRouter.put('/:id',productController.editProduct);
 productRouter.delete('/:id',productController.removeProduct);
+
+productRouter.get('/search/price',productController.findByPrice);
+productRouter.get('/arrange',productController.arrangeByPrice);
+
 productRouter.get('/:id',productController.findById);
-productRouter.get('/search/price ',productController.findByPrice);
+
 export default productRouter;
