@@ -36,7 +36,7 @@ __decorate([
     __metadata("design:type", order_1.Order)
 ], OrderDetail.prototype, "order", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => product_1.Product, (product) => product.cartDetails),
+    (0, typeorm_1.ManyToOne)(() => product_1.Product, (product) => product.orderDetails),
     __metadata("design:type", product_1.Product)
 ], OrderDetail.prototype, "product", void 0);
 OrderDetail = __decorate([

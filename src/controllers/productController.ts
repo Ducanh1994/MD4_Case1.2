@@ -17,7 +17,9 @@ class ProductController {
     }
     editProduct = async (req:Request,res:Response) => {
         const id = req.params.id;
+        console.log(id)
         const product = req.body;
+        console.log(product)
         await ProductService.editProduct(id,product);
         res.status(200).json('ok')
     }

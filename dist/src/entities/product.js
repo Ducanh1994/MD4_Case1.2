@@ -29,16 +29,16 @@ __decorate([
 ], Product.prototype, "price", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
-    __metadata("design:type", Number)
-], Product.prototype, "quantity", void 0);
+    __metadata("design:type", String)
+], Product.prototype, "discription", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => category_1.Category, (category) => category.products),
     __metadata("design:type", category_1.Category)
 ], Product.prototype, "category", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => orderDetail_1.OrderDetail, (cartDetail) => cartDetail.product),
+    (0, typeorm_1.OneToMany)(() => orderDetail_1.OrderDetail, (orderDetail) => orderDetail.product),
     __metadata("design:type", Array)
-], Product.prototype, "cartDetails", void 0);
+], Product.prototype, "orderDetails", void 0);
 Product = __decorate([
     (0, typeorm_1.Entity)()
 ], Product);

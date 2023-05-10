@@ -14,6 +14,6 @@ export class OrderDetail {
     total: number;
     @ManyToOne(() => Order,(order) => order.orderDetails)
     order: Order;
-    @ManyToOne(() => Product,(product) => product.cartDetails)
+    @ManyToOne(() => Product,(product) => product.orderDetails)
     product: Product;
 }

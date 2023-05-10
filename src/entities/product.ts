@@ -11,9 +11,9 @@ export class Product {
     @Column()
     price: number;
     @Column()
-    quantity: number;
+    discription: string;
     @ManyToOne(() => Category,(category) => category.products)
     category: Category;
-    @OneToMany( () => OrderDetail,(cartDetail) => cartDetail.product)
-    cartDetails: OrderDetail[];
+    @OneToMany( () => OrderDetail,(orderDetail) => orderDetail.product)
+    orderDetails: OrderDetail[];
 }

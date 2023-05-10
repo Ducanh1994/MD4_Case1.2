@@ -4,7 +4,7 @@ export declare class Product {
     id: number;
     name: string;
     price: number;
-    quantity: number;
+    discription: string;
     category: Category;
-    cartDetails: OrderDetail[];
+    orderDetails: OrderDetail[];
 }
